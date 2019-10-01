@@ -21,3 +21,8 @@ logicalAnd _ _ = False
 
 parallelToAxis :: (Integer, Integer) -> (Integer, Integer) -> Bool
 parallelToAxis (x1, x2) (y1, y2) = x1 == x2 || y1 == y2
+
+ack :: Int -> Int -> Int
+ack 0 n = succ n
+ack m 0 = ack (pred m) 1
+ack m n = ack (pred m) (ack m (pred n))
